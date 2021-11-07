@@ -1,5 +1,29 @@
 .container {
   background-color:khaki ;
   width: 90%;
-  
+}
+
+#user-name {
+  display: none;
+}
+#mobile {
+  display: none;
+}
+#objectify {
+  display: none;
+}
+#coffee {
+  display: none;
+}
+#music {
+  display: none;
+}
+#reptiles {
+  display: none;
+}
+#people {
+  display: none;
+}
+#result {
+  display: none;
 }
