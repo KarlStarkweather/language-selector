@@ -1,29 +1,3 @@
-// $(document).ready(function() {
-  // $("#begin").click(function() {
-  //   let selection;
-  //   $("#begin").hide();
-  //   $("#user-name").show();
-
-      //  $("#mobile").hide();
-    // $("#objectify").hide();
-    // $("#coffee").hide();
-    // $("#music").hide();
-    // $("#reptiles").hide();
-    // $("#people").hide();
-    
-
-    // if (animal === "Moose") {
-    //   $("#Moose").show();  
-    // } else if (animal === "Iguana") {
-    //   $("#Iguana").show();
-    // } else if (animal === "Turkey") {
-    //   $("#Turkey").show();
-    // } else if (animal === "Aardvark") {
-    //   $("#Aardvark").show();
-    // }
-//   });
-// });
-
 $(document).ready(function() {
   $("#begin").click(function() {
     $("#begin").hide();
@@ -57,30 +31,32 @@ $(document).ready(function() {
   $("#reptiles-select").change(function() {
     const reptilesVal = $("#reptiles-select").val();
     $("#reptiles").hide();
-
-    
     $("#people").show();
   });
+  $("#people-select").change(function() {
+    const reptilesVal = $("#people-select").val();
+    $("#people").hide();
+  });
+
+    let language
+    if (mobileVal === "Yes") {
+      if (musicVal === "Yes") {
+        language = "C#";
+      } else {
+        if (coffeeVal === "coffee") {
+          language = "Javascript";
+        }
+      }
+    } else { //Not mobile app
+      if (reptilesVal === "Yes") {
+        language = "Python";
+      } else {
+        if (peopleVal === "Yes") {
+          language = "React";
+        }
+      }
+    }
+
+    $("#result").show();
 });
 
-// $(document).ready(function() {
-//   $("#mobile-select").change(function() {
-//     const mobileVal = 
-//     $("#mobile").hide();
-//     $("#objectify").show();
-//   });
-// });
-
-// $(document).ready(function() {
-//   $("#objectify-select").change(function() {
-//     $("#objectify").hide();
-//     $("#coffee").show();
-//   });
-// });
-
-// $(document).ready(function() {
-//   $("#coffee-select").change(function() {
-//     $("#coffee").hide();
-//     $("#music").show();
-//   });
-// });
