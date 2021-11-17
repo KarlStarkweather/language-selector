@@ -10,6 +10,8 @@ This webpage is designed to help users decide which language to best study
 * Javascript
 
 ## Setup Instructions
+Clone directory from repository at https://github.com/KarlStarkweather/language-selector
+open index.html in any browser
 Press the "Begin" button to begin. Answer all questions in the order they appear, and the algorithm will return a recommended language to study
 
 ## known bugs:

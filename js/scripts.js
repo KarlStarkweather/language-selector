@@ -1,62 +1,83 @@
 $(document).ready(function() {
+  var userName;
+  var mobileVal;
+  var objectifyVal;
+  var coffeeVal;
+  var musicVal;
+  var reptilesVal;
+  var peopleVal;
+  var langVal;
+
+ 
   $("#begin").click(function() {
     $("#begin").hide();
     $("#user-name").show();
   });
   $("#user-name-input").change(function() {
-    const userName = $("#user-name").val();
+    userName = $("#user-name").val();
     $("#user-name").hide();
     $("#mobile").show();
   });
+  // first question
   $("#mobile-select").change(function() {
-    const mobileVal = $("#mobile-select").val(); 
+    mobileVal = $("#mobile-select").val(); 
     $("#mobile").hide();
-    $("#objectify").show();
+    
   });    
-  $("#objectify-select").change(function() {
-    const objectifyVal = $("#objectify-select").val();
+  if (mobileVal === "Yes") {
+    $("#objectify").show();
+    $("#objectify-select").change(function() {
+    objectifyVal = $("#objectify-select").val();
     $("#objectify").hide();
-    $("#coffee").show();
+    
   });
+  $("#coffee").show();
   $("#coffee-select").change(function() {
-    const coffeeVal = $("#coffee-select").val();
+    coffeeVal = $("#coffee-select").val();
     $("#coffee").hide();
-    $("#music").show();
   });
+  $("#music").show();
   $("#music-select").change(function() {
-    const musicVal = $("#music-select").val();
+    musicVal = $("#music-select").val();
     $("#music").hide();
-    $("#reptiles").show();
   });
-  $("#reptiles-select").change(function() {
-    const reptilesVal = $("#reptiles-select").val();
+  $("#reptiles").show();
+    $("#reptiles-select").change(function() {
+    reptilesVal = $("#reptiles-select").val();
     $("#reptiles").hide();
     $("#people").show();
   });
   $("#people-select").change(function() {
-    const reptilesVal = $("#people-select").val();
+    peopleVal = $("#people-select").val();
     $("#people").hide();
-  });
 
-    let language
+    
     if (mobileVal === "Yes") {
       if (musicVal === "Yes") {
-        language = "C#";
+        langVal = "C#";
       } else {
         if (coffeeVal === "coffee") {
-          language = "Javascript";
+          langVal = "Javascript";
+        } else {
+          langVal = "English";
         }
       }
     } else { //Not mobile app
       if (reptilesVal === "Yes") {
-        language = "Python";
+        langVal = "Python";
       } else {
         if (peopleVal === "Yes") {
-          language = "React";
+          langVal = "React";
+        } else {
+          langVal = "German";
         }
       }
     }
-
     $("#result").show();
+    // alert(langVal);
+    $("p").text("You should study " + langVal + "!");
+      // event.preventDefault();
+      // alert(langVal);
+  });
 });
 
